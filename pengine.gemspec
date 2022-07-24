@@ -5,20 +5,18 @@ require_relative "lib/pengine/version"
 Gem::Specification.new do |spec|
   spec.name = "pengine"
   spec.version = Pengine::VERSION
-  spec.authors = ["TODO: Write your name"]
-  spec.email = ["TODO: Write your email address"]
+  spec.authors = ["webdev778"]
+  spec.email = ["webdev778@gmail.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "A promotion engine"
+  spec.description = "A promotion engine that supports modular discount rules"
+  spec.homepage = "http://github.com/webdev778/pengine"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
-
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "http://github.com/webdev778/pengine"
+  spec.metadata["changelog_uri"] = "http://github.com/webdev778/pengine/blob/master/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
