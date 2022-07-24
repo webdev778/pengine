@@ -3,7 +3,7 @@
 module Pengine
   class Cart
     class Item
-      def initialize(sku, count)
+      def initialize(sku, count=1)
         @sku, @count = sku, count
       end
 

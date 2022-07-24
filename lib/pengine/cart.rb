@@ -17,5 +17,12 @@ module Pengine
         cart.items = items.map(&:dup)
       end
     end
+
+    # Test helpers
+
+    def <<(item)
+      items << item
+      self
+    end
   end
 end

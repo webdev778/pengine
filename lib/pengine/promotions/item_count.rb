@@ -11,7 +11,7 @@ module Pengine
 
       # DSL
 
-      def product(sku, count)
+      def product(sku, count=1)
         @rules << Rule.new(sku, count)
       end
 
