@@ -30,6 +30,13 @@ module Pengine
 
     # Calculate cart price after applying promotions
     def calculate(cart)
+      cart = cart.deep_dup
+
+      @rules.each do |rule|
+        cart = rule.update_cart(self, cart)
+      end
+
+      calculate_raw(cart)
     end
 
     # Test helpers

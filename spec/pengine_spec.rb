@@ -9,19 +9,19 @@ RSpec.describe Pengine do
     engine.add_product "D", 15
     
     engine.add_rule Pengine::Promotions::ItemCount do
-      product "A", 3
-      price 130
+      given_product "A", 3
+      set_price_to 130
     end
 
     engine.add_rule Pengine::Promotions::ItemCount do
-      product "B", 2
-      price 45
+      given_product "B", 2
+      set_price_to 45
     end
 
     engine.add_rule Pengine::Promotions::ItemCount do
-      product "C"
-      product "D"
-      price 30
+      given_product "C"
+      given_product "D"
+      set_price_to 30
     end
 
     engine
