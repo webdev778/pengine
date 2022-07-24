@@ -2,10 +2,10 @@
 
 RSpec.describe Pengine do
   it "has a version number" do
-    expect(Pengine::VERSION).not_to be nil
+    Pengine::VERSION.should_not be nil
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    false.should be true
   end
 end
