@@ -17,8 +17,15 @@ module Pengine
       @products[product.sku] = product
     end
 
-    # Calculate cart price without applying promotions
+    # Calculate cart price without applying promotions (unless they have been applied)
     def calculate_raw(cart)
+      cart.items.sum do |item|
+        if item.is_a? Promotion::DiscountedItem
+          item.count * item.price
+        else
+          item.count * @products[item.sku].price
+        end
+      end
     end
 
     # Calculate cart price after applying promotions
@@ -32,7 +39,7 @@ module Pengine
     end
 
     def add_product(sku, price)
-      Product.new(sku, price)
+      register_product(Product.new(sku, price))
     end
   end
 end

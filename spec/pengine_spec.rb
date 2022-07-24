@@ -30,25 +30,25 @@ RSpec.describe Pengine do
   scenarios =
     {
       :A => Pengine::Cart.new <<
-            Pengine::Cart::Item.new(:A) <<
-            Pengine::Cart::Item.new(:B) <<
-            Pengine::Cart::Item.new(:C),
+            Pengine::Cart::Item.new("A") <<
+            Pengine::Cart::Item.new("B") <<
+            Pengine::Cart::Item.new("C"),
       :B => Pengine::Cart.new <<
-            Pengine::Cart::Item.new(:A, 5) <<
-            Pengine::Cart::Item.new(:B, 5) <<
-            Pengine::Cart::Item.new(:C),
+            Pengine::Cart::Item.new("A", 5) <<
+            Pengine::Cart::Item.new("B", 5) <<
+            Pengine::Cart::Item.new("C"),
       :C => Pengine::Cart.new <<
-            Pengine::Cart::Item.new(:A, 3) <<
-            Pengine::Cart::Item.new(:B, 5) <<
-            Pengine::Cart::Item.new(:C) <<
-            Pengine::Cart::Item.new(:D),
+            Pengine::Cart::Item.new("A", 3) <<
+            Pengine::Cart::Item.new("B", 5) <<
+            Pengine::Cart::Item.new("C") <<
+            Pengine::Cart::Item.new("D"),
     }
 
   let :regular_prices do
     {
       :A => 100,
       :B => 420,
-      :C => 350,
+      :C => 335,
     }
   end
 
@@ -67,7 +67,7 @@ RSpec.describe Pengine do
       end
 
       it "computes a correct discounted price" do
-        engine.calculate_raw(cart).should be == discounted_prices[scenario_id]
+        engine.calculate(cart).should be == discounted_prices[scenario_id]
       end
     end
   end
