@@ -7,7 +7,7 @@ RSpec.describe Pengine do
     engine.add_product "B", 30
     engine.add_product "C", 20
     engine.add_product "D", 15
-    
+
     engine.add_rule Pengine::Promotions::ItemCount do
       given_product "A", 3
       set_price_to 130

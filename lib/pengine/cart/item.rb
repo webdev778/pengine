@@ -2,8 +2,10 @@
 
 module Pengine
   class Cart
+    # Item is a class used for tests, a real application would use
+    # any class, that is duck-typing compatible with Item.
     class Item
-      def initialize(sku, count=1)
+      def initialize(sku, count = 1)
         @sku, @count = sku, count
       end
 

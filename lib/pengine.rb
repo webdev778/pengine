@@ -8,7 +8,7 @@ require_relative "pengine/product"
 require_relative "pengine/promotion"
 require_relative "pengine/promotion/discounted_item"
 require_relative "pengine/promotions/item_count"
-require_relative "pengine/version"
 
+# A promotion engine
 module Pengine
 end

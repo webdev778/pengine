@@ -2,16 +2,19 @@
 
 module Pengine
   module Promotions
+    # A kind of promotion rule that discounts based on a number
+    # of items present in a cart.
     class ItemCount < Promotion
       Rule = Struct.new(:sku, :count)
       def initialize(&block)
+        super
         @rules = []
-        self.instance_exec(&block)
+        instance_exec(&block)
       end
 
       attr_accessor :rules
 
-      def update_cart(instance, cart)
+      def update_cart(_instance, cart)
         virtual_items_to_add = 0
         while cart_has_discounted_items?(cart)
           virtual_items_to_add += 1
@@ -24,7 +27,7 @@ module Pengine
 
       # DSL
 
-      def given_product(sku, count=1)
+      def given_product(sku, count = 1)
         @rules << Rule.new(sku, count)
       end
 

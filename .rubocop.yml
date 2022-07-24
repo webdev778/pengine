@@ -1,5 +1,6 @@
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.0
+  NewCops: enable
 
 Style/StringLiterals:
   Enabled: true
@@ -11,3 +12,32 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+# It may be a good idea to leave a comma if we expect
+# additional entries
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+# We like using methods starting with set_ for DSLs
+Naming/AccessorMethodName:
+  Enabled: false
+
+# Using :a => 3 in some cases is not a mistake
+Style/HashSyntax:
+  Enabled: false
+
+# Tests can be longer than 25 lines
+Metrics/BlockLength:
+  Enabled: false
+
+# Let's skip that for now... we like using item.count
+Lint/StructNewOverride:
+  Enabled: false
+
+# We like using ParallelAsignment in #initialize
+Style/ParallelAssignment:
+  Enabled: false
+
+# We don't want to require MFA
+Gemspec/RequireMFA:
+  Enabled: false
